@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side" opened>
+    <mat-list>
+      <div class="profile">
+        <img src="../../assets/z.jpg" alt="" class="logo">
+        <div class="infoUser">
+        {{nom}}
+        </div>
+      </div>
+      <mat-list-item *ngFor="let link of links" (click)="navigateToLink(link.route)" [ngClass]="{ 'clicked': link.route === activeLink }" class="list" style="cursor: pointer;">
+        <a routerLink="./{{ link.route }}">{{ link.label }}</a>
+      </mat-list-item>
+    </mat-list>
+    <div class="version">
+      version 01.01
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content id="content">
+  <mat-toolbar id="toolbar" >
+    <div class="checkmark">
+      <input type="checkbox" id="checkbox" (click)="toggleSidenav()">
+      <label for="checkbox" class="toggle">
+        <div class="bar bar--top"></div>
+        <div class="bar bar--middle"></div>
+        <div class="bar bar--bottom"></div>
+      </label>
+    </div>
+    <h1 class="titre">Accueil</h1>
+    <button mat-button (click)="logout()" class="Btn"[ngClass]="{ 'expanded': opened }">
+      <mat-icon class="sign">exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,226 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+}
+a{
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+.list{
+  padding: 25px;
+  height: fit-content;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+
+}
+
+.titre{
+color: white;
+position: relative;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: 0.5px;
+margin-left: 30px;
+
+}
+.infoUser{
+color: white;
+display: flex;
+justify-content: center;
+letter-spacing: 2px;
+font-size: 20px;
+margin-top: 30px;
+text-transform: uppercase;
+font-weight: 500;
+}
+.profile{
+padding: 55px 0 30px 0;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.version{
+
+text-transform: capitalize;
+position: absolute;
+bottom: 8px;
+transform: translateX(69%);
+color: aliceblue;
+font-size: 12px;
+}
+.list:hover a{
+  color: black;
+ }
+ .list a:hover,
+ .list.clicked a {
+   color: black;
+ }
+
+ .list:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.8s;
+ }
+
+ .list:hover:after,
+ .list.clicked:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+color: #000924;
+ }
+ #checkbox {
+  display: none;
+}
+.container-toggle{
+  height: 36px;
+}
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  margin: auto;
+  display: block;
+  margin-left: 20px;
+  height: calc(4px * 3 + 11px * 2);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: calc(4px / 2);
+  background:whitesmoke;
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+.bar--top {
+  bottom: calc(50% + 11px + 4px/ 2);
+  transition-property: bottom,transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+
+.bar--middle {
+  top: calc(50% - 4px/ 2);
+  transition-property: opacity;
+  transition-delay: calc(0s + 0.35s);
+}
+
+.bar--bottom {
+  top: calc(50% + 11px + 4px/ 2);
+  transition-property: top,transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+.logo{
+  position: relative;
+width: 200px;
+height: 200px;
+background-color: rgb(99, 99, 99);
+border-radius: 50%;
+z-index: 1;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 5px;
+font-size: 0.9em;
+font-weight: 700;
+color: rgb(37, 37, 37);
+border: 2px solid rgb(1
+, 126, 126);
+box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
+}
+/* // **********************************************************Deconnection********************************************************* */
+
+.Btn {
+display: flex;
+align-items: center;
+margin-right: 10px;
+height: 2.3em;
+    width: 2.3em;
+border: none;
+/* border-radius: 50%; */
+cursor: pointer;
+overflow: hidden;
+transition-duration: .3s;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+background-color: rgb(227, 3, 77);
+position: fixed;
+right: 30px;
+}
+/* plus sign */
+.sign {
+width: 100%;
+transition-duration: .3s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.Btn:active {
+transform: translate(2px ,2px);
+}
+/* Create a custom checkbox cercle */
+.checkmark {
+position: relative;
+top: 0;
+left: 0;
+height: 2.3em;
+width: 2.3em;
+margin-left: 34px;
+border-radius: 50%;
+background-color: rgb(227, 3, 77);
+}
+mat-sidenav-container{
+position: fixed;
+display: flex;
+/* // background-color: #000924; */
+  position: relative;
+  transition: 1.5s;
+}
+
+
+.mat-sidenav-content{
+position: relative;
+  overflow: hidden !important;
+  height: auto;
+margin-top: 63px;
+}
+.mat-sidenav{
+background: rgb(6,20,49);
+position: fixed;
+}
+#content{
+width: 100%;
+height: auto;
+   background: aliceblue;
+}
+#toolbar{
+padding:fit-content;
+position: fixed;
+top: 0;
+display: flex;
+width: 100%; /* Change to 100% to make it responsive */
+z-index: 999;
+background-color: rgb(6,20,49);
+overflow-y: hidden;
+}
